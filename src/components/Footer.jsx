@@ -1,6 +1,8 @@
 import Logo from './Logo'
-import { REPO_URL, VERSION } from '../constants'
+import { REPO_URL } from '../constants'
+import { useRelease, versionText } from '../release'
 export default function Footer({ onHelp }) {
+  const { version } = useRelease()
   const links = [['Home', '#home'], ['Features', '#features'], ['Download', '#download']]
   return (
     <footer className="border-t border-white/10 px-5 py-12">
@@ -11,7 +13,7 @@ export default function Footer({ onHelp }) {
           <li><button onClick={onHelp} className="transition hover:text-white">Help</button></li>
           <li><a href={REPO_URL} target="_blank" rel="noopener noreferrer" className="transition hover:text-white">GitHub</a></li>
         </ul>
-        <p className="text-xs text-white/35">© {new Date().getFullYear()} m4xmudovv · Version {VERSION}</p>
+        <p className="text-xs text-white/35">© {new Date().getFullYear()} m4xmudovv · {versionText(version)}</p>
       </div>
     </footer>
   )

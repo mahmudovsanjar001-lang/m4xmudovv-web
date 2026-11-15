@@ -1,11 +1,13 @@
 import { useEffect, useRef, useState } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
 import { X, Send, Check } from 'lucide-react'
-import { SUPPORT_EMAIL, VERSION } from '../constants'
+import { SUPPORT_EMAIL } from '../constants'
+import { useRelease } from '../release'
 
 const field = 'w-full rounded-xl border border-white/10 bg-black/40 px-4 py-3 text-sm text-white outline-none transition placeholder:text-white/30 focus:border-white/40'
 
 export default function HelpModal({ open, onClose }) {
+  const { version } = useRelease()
   const [state, setState] = useState('idle')
   const [v, setV] = useState({ name: '', email: '', message: '' })
   const first = useRef(null)
@@ -18,7 +20,7 @@ export default function HelpModal({ open, onClose }) {
     return () => { document.removeEventListener('keydown', key); document.body.style.overflow = ''; clearTimeout(t) }
   }, [open, onClose])
   const set = (k) => (e) => setV({ ...v, [k]: e.target.value })
-  const subject = `m4xmudovv help request (v${VERSION})`
+  const subject = `m4xmudovv help request ${version ? ` (v${version})` : ''}`
   const mailto = `mailto:${SUPPORT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`${v.message}\n\n${v.name} ${v.email}`)}`
 
   async function submit(e) {

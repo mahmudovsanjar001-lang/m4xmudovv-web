@@ -1,7 +1,8 @@
-export const VERSION = '2.2.1'
 export const REPO_URL = 'https://github.com/mahmudovsanjar001-lang/m4xmudovv'
-export const DOWNLOAD_URL = 'https://github.com/mahmudovsanjar001-lang/m4xmudovv/releases/download/v2.2.1/m4xmudovv-Setup.exe'
-export const NAV = [['Home', '#home'], ['Features', '#features'], ['Showcase', '#showcase'], ['Download', '#download']]
+export const RELEASES_URL = `${REPO_URL}/releases/latest`
+// GitHub always redirects this to the newest release's installer, so it is never outdated (used while loading or if the API is down).
+export const LATEST_DOWNLOAD_URL = `${REPO_URL}/releases/latest/download/m4xmudovv-Setup.exe`
+export const NAV = [['Home', '#home'], ['Features', '#features'], ['Showcase', '#showcase'], ['Releases', '#releases'], ['Download', '#download']]
 // Real app screenshots live in /public/screens. Replace a file to update the site.
 export const SCREENS = [
   { id: 'library', label: 'Library', src: '/screens/library.webp', alt: 'm4xmudovv wallpaper library with preview panel' },
