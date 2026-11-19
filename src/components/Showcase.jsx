@@ -11,7 +11,7 @@ export default function Showcase() {
     <section id="showcase" className="relative overflow-hidden px-5 py-28 sm:py-36">
       <div className="mx-auto max-w-[1360px]">
         <Reveal className="mx-auto mb-12 max-w-2xl text-center">
-          <p className="mb-4 text-sm text-white/40">The app</p>
+          <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-white/45">The app</p>
           <h2 className="text-4xl font-semibold tracking-tight sm:text-6xl">Calm, focused, yours.</h2>
           <p className="mt-5 text-white/55">Browse your library, preview a wallpaper, and set it in a few clicks.</p>
         </Reveal>
@@ -32,6 +32,7 @@ export default function Showcase() {
               </AnimatePresence>
             </div>
           </Tilt>
+          <AnimatePresence mode="wait"><motion.p key={cur.id} initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} transition={{ duration: 0.25 }} className="mt-6 text-center text-sm text-white/55">{cur.caption}</motion.p></AnimatePresence>
         </Reveal>
       </div>
     </section>

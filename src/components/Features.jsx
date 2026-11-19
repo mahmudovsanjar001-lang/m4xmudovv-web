@@ -15,21 +15,21 @@ const items = [
 export default function Features() {
   return (
     <section id="features" className="mx-auto max-w-[1360px] px-5 py-28 sm:py-36">
-      <Reveal><p className="mb-4 text-sm text-white/40">Features</p>
+      <Reveal><p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-white/45">Features</p>
         <h2 className="max-w-2xl text-4xl font-semibold tracking-tight sm:text-6xl">Everything your desktop needs.</h2></Reveal>
       <div className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {items.map(([Icon, t, d], i) => (
           <Reveal key={t} delay={(i % 3) * 0.08} y={20} className="h-full">
             <div onMouseMove={(e) => { const r = e.currentTarget.getBoundingClientRect(); e.currentTarget.style.setProperty("--x", `${e.clientX - r.left}px`); e.currentTarget.style.setProperty("--y", `${e.clientY - r.top}px`) }} className="group relative h-full min-h-[200px] glass overflow-hidden rounded-3xl p-8">
               <span aria-hidden="true" className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100" style={{ background: "radial-gradient(320px circle at var(--x,50%) var(--y,50%), rgba(255,255,255,0.09), transparent 60%)" }} />
-              <Icon size={20} className="mb-12 text-white/70" strokeWidth={1.5} />
+              <span className="mb-10 grid h-11 w-11 place-items-center rounded-xl border border-white/10 bg-white/[0.06]"><Icon size={19} className="text-white/85" strokeWidth={1.5} /></span>
               <h3 className="text-lg font-medium">{t}</h3>
               <p className="mt-2 text-sm leading-relaxed text-white/45">{d}</p>
             </div>
           </Reveal>
         ))}
       </div>
-      <Reveal className="mt-10"><p className="mb-4 text-sm text-white/40">And more</p>
+      <Reveal className="mt-10"><p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-white/45">And more</p>
         <ul className="flex flex-wrap gap-2">{more.map((m) => <li key={m} className="rounded-full border border-white/10 px-4 py-2 text-sm text-white/60">{m}</li>)}</ul></Reveal>
     </section>
   )

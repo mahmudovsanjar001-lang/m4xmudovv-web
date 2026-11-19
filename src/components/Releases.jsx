@@ -11,7 +11,7 @@ export default function Releases() {
       <Reveal className="glass rounded-[2rem] p-8 sm:p-12">
         <div className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="mb-3 text-sm text-white/40">Latest release</p>
+            <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-white/45">Latest release</p>
             <h2 className="text-5xl font-semibold tracking-tight sm:text-7xl" aria-live="polite">{version ? `v${version}` : '—'}</h2>
             <p className="mt-3 text-white/55">
               {publishedAt ? `Published ${fmt(publishedAt)}` : status === 'fallback' ? 'Release details are temporarily unavailable.' : 'Checking GitHub…'}
@@ -23,7 +23,7 @@ export default function Releases() {
         </div>
         {history.length > 0 && (
           <div className="mt-10 border-t border-white/10 pt-6">
-            <p className="mb-3 text-sm text-white/40">Previous versions</p>
+            <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-white/45">Previous versions</p>
             <ul className="divide-y divide-white/10">
               {history.map((h) => (
                 <li key={h.version}><a href={h.url} target="_blank" rel="noopener noreferrer" className="group flex items-center justify-between py-3 text-sm text-white/70 transition hover:text-white">
