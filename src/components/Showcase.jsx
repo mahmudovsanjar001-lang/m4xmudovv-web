@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
 import Reveal from './Reveal'
+import Heading from './Heading'
 import Tilt from './Tilt'
 import { SCREENS } from '../constants'
 
@@ -12,7 +13,7 @@ export default function Showcase() {
       <div className="mx-auto max-w-[1360px]">
         <Reveal className="mx-auto mb-12 max-w-2xl text-center">
           <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-white/45">The app</p>
-          <h2 className="text-4xl font-semibold tracking-tight sm:text-6xl">Calm, focused, yours.</h2>
+          <Heading className="text-4xl font-semibold tracking-tight sm:text-6xl">Calm, focused, yours.</Heading>
           <p className="mt-5 text-white/55">Browse your library, preview a wallpaper, and set it in a few clicks.</p>
         </Reveal>
         <Reveal>

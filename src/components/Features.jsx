@@ -1,7 +1,7 @@
 import { Film, Image, Library, FolderInput, Play, LayoutPanelLeft } from 'lucide-react'
 import Reveal from './Reveal'
+import Heading from './Heading'
 
-const more = ['Favorites', 'Playlists', 'Search and filter by images or videos', 'Volume, playback speed and fit mode', 'Video hover previews', 'Start with Windows and system tray', 'Lock screen support for images']
 
 const items = [
   [Film, 'Live Wallpapers', 'Bring your desktop to life with moving backgrounds.'],
@@ -16,7 +16,7 @@ export default function Features() {
   return (
     <section id="features" className="mx-auto max-w-[1360px] px-5 py-28 sm:py-36">
       <Reveal><p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-white/45">Features</p>
-        <h2 className="max-w-2xl text-4xl font-semibold tracking-tight sm:text-6xl">Everything your desktop needs.</h2></Reveal>
+        <Heading className="max-w-2xl text-4xl font-semibold tracking-tight sm:text-6xl">Everything your desktop needs.</Heading></Reveal>
       <div className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {items.map(([Icon, t, d], i) => (
           <Reveal key={t} delay={(i % 3) * 0.08} y={20} className="h-full">
@@ -29,8 +29,6 @@ export default function Features() {
           </Reveal>
         ))}
       </div>
-      <Reveal className="mt-10"><p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-white/45">And more</p>
-        <ul className="flex flex-wrap gap-2">{more.map((m) => <li key={m} className="rounded-full border border-white/10 px-4 py-2 text-sm text-white/60">{m}</li>)}</ul></Reveal>
     </section>
   )
 }

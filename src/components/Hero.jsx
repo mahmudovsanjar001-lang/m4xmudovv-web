@@ -22,7 +22,7 @@ export default function Hero() {
         <motion.p {...line(0.1)} className="glass mx-auto mb-6 inline-flex rounded-full px-4 py-1.5 text-xs text-white/70">Live Wallpaper Application for Windows</motion.p>
         <h1 className="text-[2.75rem] font-semibold leading-[1.02] tracking-tight sm:text-7xl lg:text-8xl xl:text-[8.5rem]">
           <motion.span className="block" {...line(0.2)}>Your Desktop.</motion.span>
-          <motion.span className="block bg-gradient-to-b from-white to-white/40 bg-clip-text text-transparent" {...line(0.35)}>Your Atmosphere.</motion.span>
+          <motion.span className="block shine" {...line(0.35)}>Your Atmosphere.</motion.span>
         </h1>
         <motion.p {...line(0.55)} className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-white/60 sm:text-lg">
           Transform your desktop with stunning live and static wallpapers. A cleaner, more personal Windows experience.

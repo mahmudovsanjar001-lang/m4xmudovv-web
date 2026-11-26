@@ -15,19 +15,19 @@ export default function Nav({ onHelp }) {
     <motion.header initial={{ y: -30, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }} className="fixed inset-x-0 top-3 z-50 px-3 sm:top-4 sm:px-5">
       <nav aria-label="Main" className="glass mx-auto flex h-14 max-w-[1100px] items-center justify-between rounded-full pl-4 pr-2 sm:pl-5">
         <a href="#home" aria-label="m4xmudovv home"><Logo size={30} /></a>
-        <ul className="hidden items-center gap-8 md:flex">
+        <ul className="hidden items-center gap-7 lg:flex">
           {NAV.map(([l, h]) => <li key={l}><a href={h} className={link}>{l}{underline}</a></li>)}
           <li><button onClick={onHelp} className={link}>Help{underline}</button></li>
         </ul>
         <div className="flex items-center gap-2">
           <a href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer" aria-label="Telegram" title="Telegram" className="grid h-10 w-10 place-items-center rounded-full border border-white/15 text-white/70 transition duration-300 hover:scale-105 hover:border-white/40 hover:bg-white/10 hover:text-white"><Send size={17} strokeWidth={1.75} /></a>
           <a href={downloadUrl ?? releaseUrl} {...(downloadUrl ? { download: true } : { target: '_blank', rel: 'noopener noreferrer' })} className="hidden rounded-full bg-white px-5 py-2 text-sm font-medium text-black transition hover:bg-white/85 md:block">{downloadUrl ? 'Download' : 'Releases'}</a>
-          <button className="grid h-10 w-10 place-items-center md:hidden" onClick={() => setOpen(!open)} aria-label="Toggle menu" aria-expanded={open}>{open ? <X size={20} /> : <Menu size={20} />}</button>
+          <button className="grid h-10 w-10 place-items-center lg:hidden" onClick={() => setOpen(!open)} aria-label="Toggle menu" aria-expanded={open}>{open ? <X size={20} /> : <Menu size={20} />}</button>
         </div>
       </nav>
       <AnimatePresence>
         {open && (
-          <motion.ul initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} className="glass mx-auto mt-2 max-w-[1100px] rounded-3xl px-5 md:hidden">
+          <motion.ul initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} className="glass mx-auto mt-2 max-w-[1100px] rounded-3xl px-5 lg:hidden">
             {NAV.map(([l, h]) => <li key={l}><a href={h} onClick={() => setOpen(false)} className="block border-b border-white/10 py-4 text-lg">{l}</a></li>)}
             <li><button onClick={() => { setOpen(false); onHelp() }} className="block w-full py-4 text-left text-lg">Help</button></li>
           </motion.ul>
